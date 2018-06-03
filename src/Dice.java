@@ -43,6 +43,7 @@ public class Dice {
     }
     
     public void printDice(){
+        
         for(int i=0; i<this.diceArray.length;i++) {
             int diceNumber = i+1;
             System.out.println("D"+ diceNumber +": " + this.diceArray[i]);
