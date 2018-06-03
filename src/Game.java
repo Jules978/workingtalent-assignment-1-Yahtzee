@@ -20,7 +20,7 @@ public class Game {
 
     Game() {
         
-        this.player = player;
+        this.player = new Player();
         this.dice = new Dice();
         this.scoreCalculator = new ScoreCalculator();
         this.player = new Player();
@@ -64,21 +64,34 @@ public class Game {
         Scanner reader = new Scanner(System.in);
         int[] rerolledDice = new int[5];
         
-        System.out.println("Which dice do you want to reroll?");
-
         for (int i = 0; i < rerolledDice.length; i++) {
 
-            System.out.print("Which die do you want to reroll? 1-6 to choose a die, enter 0 or >7 to get a reroll");
+            System.out.print("Which die do you want to reroll? 1-5 to choose a die, enter 6 or higher to continue ");
             int number = Integer.parseInt(reader.nextLine());
-            if (number > 0 && number < 7) {
+            
+            if (number > 0 && number < 6) {
                 number--;
                 rerolledDice[i] = number;
-                System.out.println(rerolledDice);
+                
+                for (int counter = 0; counter < rerolledDice.length; counter++){
+                    
+                    int rerolledDiceVar = rerolledDice[counter];
+                    
+                    if(rerolledDice[counter] != 0) {
+                        rerolledDiceVar = rerolledDice[counter]+1;
+                    }
+                    
+                    System.out.println("D: " + rerolledDiceVar );
+                }
+                
+                
             } else {
                 break; //probably not needed, but whatever
             }
 
         }
+         this.diceArray = dice.reroll(rerolledDice);
+         dice.printDice();
 
     }
 

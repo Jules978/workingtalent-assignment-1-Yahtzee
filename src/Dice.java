@@ -31,24 +31,14 @@ public class Dice {
     }
 
     public int[] reroll(int[] rerolledDice) {
-        int[] reroll = rerolledDice;
-        boolean rerollCheck = true;
+        
         for (int i = 0; i < this.diceArray.length; i++) {
-            //first check whether dice has to be rerolled
-            for (int x = 0; x < reroll.length; x++) {
-                if (reroll[x] == i) {
-                    rerollCheck = true;
-                } else {
-                    rerollCheck = false;
-                }
-            }
-
-            // if the rerollCheck is true; reroll the dice;
-            if (rerollCheck) {
+            
+            if (this.rerollCheck(rerolledDice, i)) {
                 this.diceArray[i] = this.roll();
-            }
+            } 
         }
-
+        
         return this.diceArray;
     }
     
@@ -59,4 +49,13 @@ public class Dice {
         }
     
     }
+    
+    public boolean rerollCheck(int[] arr, int number) {
+      for (int n : arr) {
+         if (number == n) {
+            return true;
+         }
+      }
+      return false;
+   }
 }
