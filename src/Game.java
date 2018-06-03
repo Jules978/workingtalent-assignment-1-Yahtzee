@@ -13,21 +13,25 @@ public class Game {
     Player player;
     Dice dice;
     ScoreCalculator scoreCalculator;
-    int turnsLeft;
+    int[] diceArray = new int[5];
+    
 
-    Game(Player player) {
+    Game() {
         this.player = player;
         this.dice = new Dice();
         this.scoreCalculator = new ScoreCalculator();
-        this.turnsLeft = 10; //or how many turns there are in a yahtzee game;
+        this.player = new Player();
+       
 
     }
 
     public void newTurn() {
 
-        this.turnsLeft--;
-        dice.roll5(); //dice array = this return value;
-        //print dice
+       
+        this.diceArray = dice.roll5(); 
+        for (int i = 0; i< this.diceArray.length; i++) {
+            System.out.println("D1 =" +diceArray[i]);
+        }
         System.out.println("Do you want to reroll? Y/N");
         //if(reroll equals("Y"){
         //this.reroll(dice array);

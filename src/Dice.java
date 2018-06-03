@@ -8,11 +8,10 @@
  *
  * @author jdrunen
  */
-
 import java.util.Random;
 
 public class Dice {
-    
+
     private Random random;
 
     public Dice() {
@@ -22,15 +21,14 @@ public class Dice {
     public int roll() {
         return random.nextInt(6) + 1;
     }
-    
-   //method to generate first array or arraylist of 5 integers
-    public void roll5(){
-    
+
+    //method to generate first array or arraylist of 5 integers
+    public int[] roll5() {
+        int[] dice = {this.roll(), this.roll(), this.roll(), this.roll(), this.roll()};
+        return dice;
     }
-    
+
     //method to reroll dice
     //public void reroll(array or arraylist) {
     //}
-    
-    
 }

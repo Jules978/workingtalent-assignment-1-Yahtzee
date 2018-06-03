@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yahtzee;
+
 
 /**
  *
@@ -15,7 +15,13 @@ public class Yahtzee {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+      Game game = new Game();
+      int turnsLeft = 10;
+      
+      for (int i=0; i<turnsLeft; i++){
+          game.newTurn();
+      }
     }
     
 }

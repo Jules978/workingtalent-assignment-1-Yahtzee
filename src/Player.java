@@ -13,11 +13,11 @@
 public class Player {
     
     private int score;
-    private String name;
+    //private String name;
     
-    Player (String newName) {
+    Player() {
         this.score = 0;
-        this.name = newName;
+        //this.name = newName;
     }
     
     public int score() {
