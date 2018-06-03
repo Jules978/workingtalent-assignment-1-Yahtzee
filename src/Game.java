@@ -28,31 +28,48 @@ public class Game {
     public void newTurn() {
 
         this.diceArray = dice.roll5();
-
+        int rerollsLeft = 3;
+        boolean wantsToReroll = true;
         for (int i = 0; i < this.diceArray.length; i++) {
             System.out.println("D1 =" + diceArray[i]);
         }
-        System.out.println("Do you want to reroll? Y/N");
-        //if(reroll equals("Y"){
-        //this.reroll(dice array);
-        //}
-        // dice array = this return value (of the rerolled dice)
 
+        while (rerollsLeft > 0) {
+            System.out.println("Do you want to reroll?");
+            
+            if (wantsToReroll) {
+                this.reroll();
+                System.out.println("Your dice:");
+                dice.printDice();
+                rerollsLeft --;
+            } else {break;}
+            
+
+        }
+
+        int score = scoreCalculator.addition(this.diceArray);
+        player.setScore(score);
+        System.out.println("you now have " + score + " points!" );
     }
 
     public void reroll() {
-        int rerollsLeft = 3;
+
         int[] rerolledDice = new int[5];
         // array or array list with 5 dice rolls;
 
-        while (rerollsLeft > 0) {
-            System.out.println("Which dice do you want to reroll?");
-            //   while reroll is true (break on 0, 6, 7, 8, 9) add numbers to array or arraylist
-            //   dice.reroll(rolled dice, diceToBeRerolled )   
-            //  
+        System.out.println("Which dice do you want to reroll?");
+      
+
+        for (int i = 0; i < rerolledDice.length; i++) {
+            //which number? 1-6
+            //if number > 0 && <7
+            // number -1 
+            //add number to rerolledDice[i];
+
+            //if number = 0, continue (?)
         }
-        //int points = scoreCalculator.addition(dice array);
-        //player.addToScore(points);
+
+        //   this.diceArray = dice.reroll(rolled dice, diceToBeRerolled )   
     }
 
 }

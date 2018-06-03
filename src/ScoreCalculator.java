@@ -9,5 +9,18 @@
  * @author jdrunen
  */
 public class ScoreCalculator {
-    
+
+    int totalScore;
+
+    public int addition(int[] diceArray) {
+        int score = 0;
+        for (int i = 0; i < diceArray.length; i++) {
+            score += diceArray[i];
+        }
+        this.totalScore += score;
+        
+        return totalScore;
+
+    }
+
 }

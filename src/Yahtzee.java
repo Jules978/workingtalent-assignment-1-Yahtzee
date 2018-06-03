@@ -19,7 +19,14 @@ public class Yahtzee {
       Game game = new Game();
       int turnsLeft = 10;
       
+        System.out.println("hello, let's roll some dice!");
+        System.out.println("You have 10 rounds to get as many points as possible,");
+        System.out.println("only the value on the dice is counted, so no bonus points for fullhouse etc.");
+        System.out.println("Let's go!");
+      
       for (int i=0; i<turnsLeft; i++){
+          int round = i+1;
+          System.out.println("Round " + round );
           game.newTurn();
       }
     }

@@ -8,11 +8,12 @@
  *
  * @author jdrunen
  * 
+ * this class is currently a bit unnecessary, but may become useful when multiple players can play against each other.
  * 
  */
 public class Player {
     
-    private int score;
+    public int score;
     //private String name;
     
     Player() {
@@ -24,8 +25,8 @@ public class Player {
     return this.score;
     }
     
-    public void addToScore(int points) {
-        this.score += points;
+    public void setScore(int score) {
+        this.score = score;
     }
         
 }
