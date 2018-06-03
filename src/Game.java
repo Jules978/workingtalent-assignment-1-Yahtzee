@@ -8,29 +8,29 @@
  *
  * @author jdrunen
  */
+import java.util.Arrays;
+
 public class Game {
 
     Player player;
     Dice dice;
     ScoreCalculator scoreCalculator;
     int[] diceArray = new int[5];
-    
 
     Game() {
         this.player = player;
         this.dice = new Dice();
         this.scoreCalculator = new ScoreCalculator();
         this.player = new Player();
-       
 
     }
 
     public void newTurn() {
 
-       
-        this.diceArray = dice.roll5(); 
-        for (int i = 0; i< this.diceArray.length; i++) {
-            System.out.println("D1 =" +diceArray[i]);
+        this.diceArray = dice.roll5();
+
+        for (int i = 0; i < this.diceArray.length; i++) {
+            System.out.println("D1 =" + diceArray[i]);
         }
         System.out.println("Do you want to reroll? Y/N");
         //if(reroll equals("Y"){
@@ -42,6 +42,7 @@ public class Game {
 
     public void reroll() {
         int rerollsLeft = 3;
+        int[] rerolledDice = new int[5];
         // array or array list with 5 dice rolls;
 
         while (rerollsLeft > 0) {
